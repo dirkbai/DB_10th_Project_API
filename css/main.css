@@ -12,33 +12,10 @@ header {
   margin: 5%;
 }
 
-form {
-  max-width: 400px;
-  margin: auto;
-  padding: 0 1em;
+#sub_btn {
+  width: 100%;
+  margin: 2rem 0;
 }
-
-input {
-  background: rgba(255,255,255,0.1);
-  border: solid 3px rgba(255,255,255,0.1);
-  border-radius: 3px;
-  font-size: 16px;
-  margin: 3em 0;
-  outline: 0;
-  padding: 15px 3%;
-  width: 94%;
-  background-color: #444;
-  color: white;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-  transition: background-color 2s;
-  }
-
-  input:focus {
-    border: solid 3px orange;
-    color: black;
-    background-color: white;
-  }
-
 
 ul li {
   margin: 15px 0 0;
@@ -126,6 +103,14 @@ ul.filter-select button:after {
 
   /* ====================Light Box ===================*/
 
+.mfp-figure{
+  background: white;
+}
+
+.mfp-figure figure{
+  padding-bottom: 2em;
+}
+
   .mfp-counter{
     display: none;
   }
@@ -147,8 +132,10 @@ ul.filter-select button:after {
     box-sizing: border-box; }
 
   .mfp-title{
-    text-align: center;
-    margin-top: 3em;
+    color: #444;
+    text-align: left;
+    padding: 2rem;
+    margin-top: 2em;
     padding: 0;
   }
 
@@ -182,14 +169,18 @@ ul.filter-select button:after {
 
       .mfp-title{
 
-        margin-top: 4em;
+        margin-top: 2em;
       }
 
       img.mfp-img{
-        width: 60%;
+        width: 100%;
         padding: 0;
       }
 
+      #sub_btn {
+        width: 60%;
+        margin: 2rem 20%;
+      }
     }
 
   @media (min-width: 980px) {
@@ -197,6 +188,11 @@ ul.filter-select button:after {
         .Photos{
           width: 20%;
           margin: 0 2.5% 3em 2.5%;
+        }
+
+        #sub_btn {
+          width: 40%;
+          margin: 2rem 30%;
         }
 
       }

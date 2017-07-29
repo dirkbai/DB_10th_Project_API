@@ -1,48 +1,47 @@
-$('.Photos_wrapper').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		closeOnContentClick: false,
-		closeBtnInside: false,
-		mainClass: 'mfp-img-mobile',
-		image: {
-			verticalFit: true,
-			titleSrc: function(item) {
-				return item.el.attr('title');
-			}
-		},
-		gallery: {
-			enabled: true
-		},
-		zoom: {
-			enabled: true,
-			duration: 300,
-			opener: function(element) {
-				return element.find('img');
-			}
-		}
-
-	});
 
 	$(document).ready(function () {
 	  $('button').click(function () {
 	    $("button").removeClass("selected");
 	    $(this).addClass("selected");
-	    var flickerAPI = "https://deckofcardsapi.com/api/deck/new/draw/?count=1"
-	    // var animal = "cat";
-	    // var flickrOptions = {
-	    //   tags: animal,
-	    //   format: "json"
-	    // };
-	    function displayPhotos(data) {
-	      var photoHTML = '<div>';
-	      $.each( data.items, function (i, photo) {
-	        photoHTML += '<a href="' + photo.link + '" class="image">';
-	        photoHTML += '<img src="' + photo.media.m + '"></a>';
+	    var cardsAPI = "https://deckofcardsapi.com/api/deck/new/draw/?count=8"
+
+	    function displayCards(data) {
+	      var cardHTML = '<div>';
+	      $.each( data.cards, function (i, card) {
+	        cardHTML += '<a href="' + card.image + '" title=" Value : ' + card.value + '<br> <br>Suit : ' + card.suit + '<br> <br> Code : ' + card.code + '">';
+	        cardHTML += '<img src="' + card.image + '" class="Photos"></a>';
 	      });
-	      photoHTML += '</div>';
-	      $('#photos').html(photoHTML);
+	      cardHTML += '</div>';
+	      $('#photos').html(cardHTML);
 	    };
-	    $.getJSON(flickerAPI, displayPhotos);
+	    $.getJSON(cardsAPI, displayCards);
 	  });
 
 	}); // end ready
+
+
+
+	$('.Photos_wrapper').magnificPopup({
+			delegate: 'a',
+			type: 'image',
+			closeOnContentClick: false,
+			closeBtnInside: false,
+			mainClass: 'mfp-img-mobile',
+			image: {
+				verticalFit: true,
+				titleSrc: function(item) {
+					return item.el.attr('title');
+				}
+			},
+			gallery: {
+				enabled: true
+			},
+			zoom: {
+				enabled: true,
+				duration: 300,
+				opener: function(element) {
+					return element.find('img');
+				}
+			}
+
+		});
