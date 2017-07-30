@@ -25,6 +25,25 @@
 		  }
 		});
 
+
+		$('#star_wars').click(function () {
+			$("button").removeClass("selected");
+			$(this).addClass("selected");
+			// $("#suit_btn").css("display", "block");
+			var starWarsAPI = "https://swapi.co/api/people/?count=1"
+
+			function displayWars(data) {
+				var warsHTML = '<div>';
+				$.each( data.results, function (i, result) {
+					warsHTML += '<a href="http://deckofcardsapi.com/static/img/6C.png" title=" Name : ' + result.name + '<br> <br>Height : ' + result.height + '<br> <br> Eye color : ' + result.eye_color + ' <br> <br> Birth Year : ' + result.birth_year + '" data-name="' + result.name + '">';
+					warsHTML += '<img src="http://deckofcardsapi.com/static/img/6C.png" class="Photos"></a>';
+				});
+				warsHTML += '</div>';
+				$('#photos').html(warsHTML);
+			};
+			$.getJSON(starWarsAPI, displayWars);
+		});
+
 	}); // end ready
 
 
