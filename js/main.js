@@ -3,6 +3,7 @@
 	  $('#get_cards').click(function () {
 	    $("button").removeClass("selected");
 	    $(this).addClass("selected");
+			$("#suit_btn").css("display", "block");
 	    var cardsAPI = "https://deckofcardsapi.com/api/deck/new/draw/?count=8"
 
 	    function displayCards(data) {
@@ -17,7 +18,7 @@
 	    $.getJSON(cardsAPI, displayCards);
 	  });
 
-	$('#sub_btn').click(function() {
+	$('#suit_btn').click(function() {
 		  $("#photos a").sort(sort_cards).appendTo('#photos');
 		  function sort_cards(a, b) {
 		    return ($(b).data('suit')) < ($(a).data('suit')) ? 1 : -1;

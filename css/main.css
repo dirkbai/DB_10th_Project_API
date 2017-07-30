@@ -101,6 +101,10 @@ ul.filter-select button:after {
     margin-bottom: 3em;
   }
 
+  #suit_btn{
+    display: none;
+  }
+
   /* ====================Light Box ===================*/
 
 .mfp-figure{
