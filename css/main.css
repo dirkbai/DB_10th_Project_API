@@ -12,7 +12,7 @@ header {
   margin: 5%;
 }
 
-#sub_btn {
+.sub_btn {
   width: 100%;
   margin: 2rem 0;
 }
@@ -101,7 +101,29 @@ ul.filter-select button:after {
     margin-bottom: 3em;
   }
 
+  .Stats-sw{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    height: 7rem;
+  background: -moz-linear-gradient(45deg, #1e5799 0%, #2989d8 50%, #7b9de5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #1e5799 0%,#2989d8 50%,#7b9de5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #1e5799 0%,#2989d8 50%,#7b9de5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border-radius: 3px;
+    margin-bottom: 3em;
+  }
+
   #suit_btn{
+    display: none;
+  }
+
+  #height_btn{
     display: none;
   }
 
@@ -162,11 +184,22 @@ ul.filter-select button:after {
       margin: 0 5% 3em 5%;
     }
 
+    .Stats-sw{
+      float: left;
+      width: 40%;
+      margin: 0 5% 3em 5%;
+    }
+
   }
 
   @media (min-width: 640px) {
 
       .Photos{
+        width: 25%;
+        margin: 0 4% 3em 4%;
+      }
+
+      .Stats-sw{
         width: 25%;
         margin: 0 4% 3em 4%;
       }
@@ -181,7 +214,7 @@ ul.filter-select button:after {
         padding: 0;
       }
 
-      #sub_btn {
+      .sub_btn {
         width: 60%;
         margin: 2rem 20%;
       }
@@ -194,7 +227,12 @@ ul.filter-select button:after {
           margin: 0 2.5% 3em 2.5%;
         }
 
-        #sub_btn {
+        .Stats-sw{
+          width: 20%;
+          margin: 0 2.5% 3em 2.5%;
+        }
+
+        .sub_btn {
           width: 40%;
           margin: 2rem 30%;
         }

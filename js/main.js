@@ -3,6 +3,7 @@
 	  $('#get_cards').click(function () {
 	    $("button").removeClass("selected");
 	    $(this).addClass("selected");
+			$("#height_btn").css("display", "none");
 			$("#suit_btn").css("display", "block");
 	    var cardsAPI = "https://deckofcardsapi.com/api/deck/new/draw/?count=8"
 
@@ -29,20 +30,28 @@
 		$('#star_wars').click(function () {
 			$("button").removeClass("selected");
 			$(this).addClass("selected");
-			// $("#suit_btn").css("display", "block");
+			$("#suit_btn").css("display", "none");
+			$("#height_btn").css("display", "block");
 			var starWarsAPI = "https://swapi.co/api/people/?count=1"
 
 			function displayWars(data) {
 				var warsHTML = '<div>';
 				$.each( data.results, function (i, result) {
-					warsHTML += '<a href="http://deckofcardsapi.com/static/img/6C.png" title=" Name : ' + result.name + '<br> <br>Height : ' + result.height + '<br> <br> Eye color : ' + result.eye_color + ' <br> <br> Birth Year : ' + result.birth_year + '" data-name="' + result.name + '">';
-					warsHTML += '<img src="http://deckofcardsapi.com/static/img/6C.png" class="Photos"></a>';
+					warsHTML += '<a href="img/starwars_551c43f4.jpeg" title=" Name : ' + result.name + '<br> <br>Height : ' + result.height + '<br> <br> Eye color : ' + result.eye_color + ' <br> <br> Birth Year : ' + result.birth_year + '" data-height="' + result.height + '" class="Stats-sw"> ' + result.name + '';
+					warsHTML += '<img src=" " ></a>';
 				});
 				warsHTML += '</div>';
 				$('#photos').html(warsHTML);
 			};
 			$.getJSON(starWarsAPI, displayWars);
 		});
+
+		$('#height_btn').click(function() {
+				$("#photos a").sort(sort_wars).appendTo('#photos');
+				function sort_wars(a, b) {
+					return ($(b).data('height')) < ($(a).data('height')) ? 1 : -1;
+				}
+			});
 
 	}); // end ready
 
