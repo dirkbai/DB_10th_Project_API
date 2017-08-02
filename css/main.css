@@ -12,11 +12,6 @@ header {
   margin: 5%;
 }
 
-.sub_btn {
-  width: 100%;
-  margin: 2rem 0;
-}
-
 ul li {
   margin: 15px 0 0;
   font-size: 1.6em;
@@ -88,6 +83,10 @@ ul.filter-select button:after {
 
 
   /* ====================Photos===================*/
+
+  .no_disply{
+    display: none;
+  }
 
   .Photos_wrapper {
     max-width: 980px;
@@ -214,10 +213,6 @@ ul.filter-select button:after {
         padding: 0;
       }
 
-      .sub_btn {
-        width: 60%;
-        margin: 2rem 20%;
-      }
     }
 
   @media (min-width: 980px) {
@@ -230,11 +225,6 @@ ul.filter-select button:after {
         .Stats-sw{
           width: 20%;
           margin: 0 2.5% 3em 2.5%;
-        }
-
-        .sub_btn {
-          width: 40%;
-          margin: 2rem 30%;
         }
 
       }

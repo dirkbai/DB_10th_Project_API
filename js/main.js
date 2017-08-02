@@ -38,7 +38,7 @@
 				var warsHTML = '<div>';
 				$.each( data.results, function (i, result) {
 					warsHTML += '<a href="img/starwars_551c43f4.jpeg" title=" Name : ' + result.name + '<br> <br>Height : ' + result.height + '<br> <br> Eye color : ' + result.eye_color + ' <br> <br> Birth Year : ' + result.birth_year + '" data-height="' + result.height + '" class="Stats-sw"> ' + result.name + '';
-					warsHTML += '<img src=" " ></a>';
+					warsHTML += '<img src="" alt=" " class="no_disply"></a>';
 				});
 				warsHTML += '</div>';
 				$('#photos').html(warsHTML);
