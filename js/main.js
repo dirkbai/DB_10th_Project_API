@@ -5,7 +5,7 @@
 	    $(this).addClass("selected");
 			$("#height_btn").css("display", "none");
 			$("#suit_btn").css("display", "block");
-	    var cardsAPI = "https://deckofcardsapi.com/api/deck/new/draw/?count=8"
+	    var cardsAPI = "https://deckofcardsapi.com/api/deck/new/draw/?count=8";
 
 	    function displayCards(data) {
 	      var cardHTML = '<div>';
@@ -15,7 +15,7 @@
 	      });
 	      cardHTML += '</div>';
 	      $('#photos').html(cardHTML);
-	    };
+	    }
 	    $.getJSON(cardsAPI, displayCards);
 	  });
 
@@ -32,7 +32,7 @@
 			$(this).addClass("selected");
 			$("#suit_btn").css("display", "none");
 			$("#height_btn").css("display", "block");
-			var starWarsAPI = "https://swapi.co/api/people/?count=1"
+			var starWarsAPI = "https://swapi.co/api/people/?count=1";
 
 			function displayWars(data) {
 				var warsHTML = '<div>';
@@ -42,7 +42,7 @@
 				});
 				warsHTML += '</div>';
 				$('#photos').html(warsHTML);
-			};
+			}
 			$.getJSON(starWarsAPI, displayWars);
 		});
 
